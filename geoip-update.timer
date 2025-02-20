@@ -1,0 +1,13 @@
+# /etc/systemd/system/geoip-update.timer
+[Unit]
+Description=GeoIP Update Service timer
+After=network-online.target
+Wants=network-online.target
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+AccuracySec=1h
+
+[Install]
+WantedBy=network-online.target
