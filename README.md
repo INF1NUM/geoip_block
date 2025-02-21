@@ -12,7 +12,7 @@ wget -O - https://github.com/INF1NUM/geoip_block/raw/refs/heads/main/uninstall.s
 ```
 
 # Configure
-Add direct link to *.ipset or *.netset file to /etc/geoip_block/url.list
+Add direct link to *.ipset or *.netset file to /etc/geoip_block/url.list.
 Use iptables command to restrict access by ipset.
 For example:
 ```bash
