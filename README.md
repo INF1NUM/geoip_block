@@ -1,11 +1,15 @@
-# geoip_block
+# GeoIP block
 Simple GeoIP filter for ipset
 
 ## Install
+```bash
 wget -O - https://github.com/INF1NUM/geoip_block/raw/refs/heads/main/install.sh | bash
+```
 
 ## Uninstall
+```bash
 wget -O - https://github.com/INF1NUM/geoip_block/raw/refs/heads/main/uninstall.sh | bash
+```
 
 # Confgiure
 
