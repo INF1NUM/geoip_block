@@ -1,3 +1,4 @@
+#!/bin/bash
 echo '[GeoIP block]: Stop Update service'
 sudo systemctl disable geoip-update.timer --now
 sudo systemctl disable geoip-boot.service --now
