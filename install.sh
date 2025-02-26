@@ -1,3 +1,4 @@
+#!/bin/bash
 echo '[GeoIP block]: Install dependencies'
 sudo apt install ipset iprange -y
 
