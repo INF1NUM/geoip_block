@@ -1,0 +1,9 @@
+[Unit]
+Description=GeoIP load after boot
+  
+[Service]
+Type=simple
+ExecStart=/opt/geoip_block/bin/geoip-block.sh apply
+
+[Install]
+WantedBy=multi-user.target

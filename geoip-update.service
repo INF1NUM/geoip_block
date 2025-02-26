@@ -1,16 +1,10 @@
-# /etc/systemd/system/geoip-update.service
 [Unit]
 Description=GeoIP Update Service
-After=network-online.target
-Wants=network-online.target
   
 [Service]
-# Тип службы, указан oneshot, без порождения подпроцессов для упрощения взаимодействия с таймерами
-Type=oneshot
-# Перезапуск при сбое, необязательный параметр
-#Restart=on-failure
-# Пример выполняемой команды
-ExecStart=/usr/local/bin/geoip-update.sh
+Type=simple
+#ExecStartPre=/usr/bin/bash -c 'until getent ahosts google.com > /dev/null; do sleep 1; done'
+ExecStart=/opt/geoip_block/bin/geoip-block.sh update
 
 [Install]
-WantedBy=network-online.target
+WantedBy=multi-user.target
