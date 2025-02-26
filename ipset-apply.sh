@@ -14,6 +14,8 @@
 # The new ipset is either applied at once, or
 # the old ipset will remain untouched.
 
+. /opt/geoip_block/etc/geoip_block.conf
+
 # Call this script with just a filename.
 
 ipset="${1}"
@@ -23,13 +25,16 @@ tmpname="tmp-$$-${RANDOM}-$(date +%s)"
 exists="no"
 
 # ipsets are searched in this path too.
-base="/tmp/geoip_block"
+base=${DATADIR}
 
 # Default values for iprange reduce mode
 # which optimizes netsets for optimal
 # kernel performance.
 IPSET_REDUCE_FACTOR=20
 IPSET_REDUCE_ENTRIES=65535
+
+echo "ipset = ${ipset}"
+echo "base = ${base}"
 
 if [ -z "${ipset}" -o "${ipset}" = "-h" -o "${ipset}" = "--help" ]
 	then
