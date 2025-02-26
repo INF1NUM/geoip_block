@@ -1,6 +1,6 @@
 # Install dependencies
 echo '[GeoIP block]: Install dependencies'
-sudo apt install ipset iprange netfilter-persistent -y
+sudo apt install ipset iprange -y
 
 # Download archive
 echo '[GeoIP block]: Download archive'
