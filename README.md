@@ -21,8 +21,7 @@ iptables -A INPUT -i eth0 -p tcp -m set ! --match-set country_ru src -m tcp --dp
 ```
 To apply settigs you can run command
 ```shell
-geoip_block update
-geoip_block apply
+geoip_block update && geoip_block apply
 ```
 
 
