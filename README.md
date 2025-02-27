@@ -25,11 +25,11 @@ To apply settigs you can run command
 geoip_block update && geoip_block apply
 ```
 
-##⚠️ Be careful!
+## ⚠️ Be careful!
 - iptables rules are not automatically deleted when they are deleted from the iptables.rule file. You must do this manualy, or reboot the system after change file iptables.rule.
 - by default file iptables.rule contain rule `-A INPUT -i eth0 -p tcp -m set ! --match-set country_ru src -m tcp --dport 10022 -j DROP`. To delete it after install, change file iptables.rule and run the command `iptables -D INPUT -i eth0 -p tcp -m set ! --match-set country_ru src -m tcp --dport 10022 -j DROP`
 
-##Sources
+## Sources
 - https://github.com/firehol/blocklist-ipsets
 - https://github.com/firehol/firehol/tree/master/contrib
 - https://www.seenlyst.com/blog/iptables-ipset-block-country-vpn/
