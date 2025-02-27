@@ -33,9 +33,6 @@ base=${DATADIR}
 IPSET_REDUCE_FACTOR=20
 IPSET_REDUCE_ENTRIES=65535
 
-echo "ipset = ${ipset}"
-echo "base = ${base}"
-
 if [ -z "${ipset}" -o "${ipset}" = "-h" -o "${ipset}" = "--help" ]
 	then
 	echo >&2 "This script can load any IPv4 ipset in kernel."
