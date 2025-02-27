@@ -16,9 +16,9 @@ wget -nv -O - https://github.com/INF1NUM/geoip_block/raw/refs/heads/main/uninsta
 - The update source is configured in the file: `/opt/geoip_block/etc/url.list`
 - The iptables blocking rules are configured in the file: `/opt/geoip_block/etc/iptables.rule`
 
-For example, the following rule restrict access to tcp port 10022 on interface eth0:
+For example, the following rule restrict access to tcp port 22 on interface eth0:
 ```bash
-iptables -A INPUT -i eth0 -p tcp -m set ! --match-set country_ru src -m tcp --dport 22 -j DROP
+-A INPUT -i eth0 -p tcp -m set ! --match-set country_ru src -m tcp --dport 22 -j DROP
 ```
 To apply settigs you can run command
 ```shell
@@ -26,7 +26,8 @@ geoip_block update && geoip_block apply
 ```
 
 ⚠️ Be careful!
-- iptables rules are not automatically deleted when they are deleted from the iptables.rule file. You must do this yourself, or reboot the system.
+- iptables rules are not automatically deleted when they are deleted from the iptables.rule file. You must do this manualy, or reboot the system after change file iptables.rule.
+- by default file iptables.rule contain rule `-A INPUT -i eth0 -p tcp -m set ! --match-set country_ru src -m tcp --dport 10022 -j DROP`. To delete it after install, change file iptables.rule and run the command `iptables -D INPUT -i eth0 -p tcp -m set ! --match-set country_ru src -m tcp --dport 10022 -j DROP`
 
 Sources
 - https://github.com/firehol/blocklist-ipsets
