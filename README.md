@@ -11,7 +11,7 @@ wget -nv -O - https://github.com/INF1NUM/geoip_block/raw/refs/heads/main/install
 wget -nv -O - https://github.com/INF1NUM/geoip_block/raw/refs/heads/main/uninstall.sh | bash
 ```
 
-## Configure
+## ⚙️ Configure
 - The update frequency is set in the file: `/etc/systemd/system/geoip-update.timer`
 - The update source is configured in the file: `/opt/geoip_block/etc/url.list`
 - The iptables blocking rules are configured in the file: `/opt/geoip_block/etc/iptables.rule`
@@ -24,6 +24,10 @@ To apply settigs you can run command
 ```shell
 geoip_block update && geoip_block apply
 ```
+
+⚠️ Be careful!
+- iptables rules are not automatically deleted when they are deleted from the iptables.rule file. You must do this yourself, or reboot the system.
+
 Sources
 - https://github.com/firehol/blocklist-ipsets
 - https://github.com/firehol/firehol/tree/master/contrib
