@@ -23,7 +23,7 @@ sudo cp geoip-update.timer /etc/systemd/system/geoip-update.timer
 sudo cp geoip-boot.service /etc/systemd/system/geoip-boot.service
 sudo chmod +x /opt/geoip_block/bin/ipset-apply.sh
 sudo chmod +x /opt/geoip_block/bin/geoip-block.sh
-ln -s /opt/geoip_block/bin/geoip-block.sh /usr/local/bin/geoip_block
+sudo ln -s /opt/geoip_block/bin/geoip-block.sh /usr/local/bin/geoip_block
 
 echo '[GeoIP block]: Start Update service'
 sudo systemctl daemon-reload
