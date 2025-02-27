@@ -12,6 +12,7 @@ echo '[GeoIP block]: Create folders'
 sudo mkdir -p /opt/geoip_block/etc
 sudo mkdir -p /opt/geoip_block/bin
 sudo mkdir -p /opt/geoip_block/data
+
 echo '[GeoIP block]: Copy files'
 sudo cp ipset-apply.sh /opt/geoip_block/bin/ipset-apply.sh
 sudo cp geoip-block.sh /opt/geoip_block/bin/geoip-block.sh
