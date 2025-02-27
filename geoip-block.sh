@@ -2,7 +2,11 @@
 . /opt/geoip_block/etc/geoip_block.conf
 
 show_help() {
-    echo "This is help for script GeoIP block"
+    echo 'Usage: geoip_block [OPTION]'
+    echo ''
+    echo 'Options:'
+    echo '  update                     Update ipset/netset presets'
+    echo '  apply                      Apply all downloaded ipset/netset presets'
 }
 
 apply_iptables() {
