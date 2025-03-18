@@ -3,7 +3,7 @@ Description=GeoIP Update Service timer
 
 [Timer]
 OnBootSec=10min
-OnUnitActiveSec=10min
+OnUnitActiveSec=12h
 
 [Install]
 WantedBy=timers.target
