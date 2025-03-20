@@ -14,16 +14,16 @@ echo '[GeoIP block]: Сreating a directory structure...'
 sudo mkdir -p ${APPDIR}/{etc,bin,data}
 
 echo '[GeoIP block]: Сopying program files...'
-sudo cp ipset-apply.sh ${APPDIR}/bin/ipset-apply.sh
-sudo cp geoip-block.sh ${APPDIR}/bin/geoip-block.sh
-sudo cp url.list ${APPDIR}/etc/url.list
-sudo cp geoip_block.conf ${APPDIR}/etc/geoip_block.conf
-sudo cp iptables.rule ${APPDIR}/etc/iptables.rule
-sudo cp geoip-update.service ${APPDIR}/etc/geoip-update.service
-sudo cp geoip-update.timer ${APPDIR}/etc/geoip-update.timer
-sudo cp geoip-boot.service ${APPDIR}/etc/geoip-boot.service
-sudo chmod +x ${APPDIR}/bin/ipset-apply.sh
-sudo chmod +x ${APPDIR}/bin/geoip-block.sh
+sudo cp ipset-apply.sh ${APPDIR}/bin/
+sudo cp geoip-block.sh ${APPDIR}/bin/
+sudo cp url.list ${APPDIR}/etc/
+sudo cp geoip_block.conf ${APPDIR}/etc/
+sudo cp iptables.rule ${APPDIR}/etc/
+sudo cp geoip-update.service ${APPDIR}/etc/
+sudo cp geoip-update.timer ${APPDIR}/etc/
+sudo cp geoip-boot.service ${APPDIR}/etc/
+sudo chmod +x ${APPDIR}/bin/
+sudo chmod +x ${APPDIR}/bin/
 sudo ln -s ${APPDIR}/bin/geoip-block.sh" "/usr/local/bin/geoip_block
 
 echo '[GeoIP block]: Setting up Update service...'
