@@ -11,7 +11,7 @@ rm main.tar.gz
 cd geoip_block-main/
 
 echo '[GeoIP block]: Сreating a directory structure...'
-sudo mkdir -p ${APPDIR}/{etc,bin,data}
+sudo mkdir -p "${APPDIR}/{etc,bin,data}"
 
 echo '[GeoIP block]: Сopying program files...'
 sudo cp ipset-apply.sh "${APPDIR}/bin/ipset-apply.sh"
@@ -27,9 +27,9 @@ sudo chmod +x "${APPDIR}/bin/geoip-block.sh"
 sudo ln -s "${APPDIR}/bin/geoip-block.sh" "/usr/local/bin/geoip_block"
 
 echo '[GeoIP block]: Setting up Update service...'
-sudo systemctl link ${APPDIR}/etc/geoip-update.service
-sudo systemctl link ${APPDIR}/etc/geoip-update.timer
-sudo systemctl link ${APPDIR}/etc/geoip-boot.service
+sudo systemctl link "${APPDIR}/etc/geoip-update.service"
+sudo systemctl link "${APPDIR}/etc/geoip-update.timer"
+sudo systemctl link "${APPDIR}/etc/geoip-boot.service"
 sudo systemctl enable geoip-boot.service
 sudo systemctl enable geoip-update.timer --now
 
