@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo '[GeoIP block]: Uninstall services...'
-sudo systemctl disable geoip-update.timer geoip-update.service geoip-boot.service
+sudo systemctl disable geoip-update.timer geoip-update.service geoip-boot.service 2> /dev/null
 sudo systemctl reset-failed
 sudo systemctl daemon-reload
 
