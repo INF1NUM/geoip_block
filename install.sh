@@ -1,19 +1,17 @@
 #!/bin/bash
-echo '[GeoIP block]: Install dependencies'
+echo '[GeoIP block]: Installing dependencies...'
 sudo apt install ipset iprange -y
 
-echo '[GeoIP block]: Download archive'
+echo '[GeoIP block]: Downloading programm files...'
 wget -nv https://github.com/INF1NUM/geoip_block/archive/refs/heads/main.tar.gz
 tar -xvzf main.tar.gz 1> /dev/null
 rm main.tar.gz
 cd geoip_block-main/
 
-echo '[GeoIP block]: Create folders'
-sudo mkdir -p /opt/geoip_block/etc
-sudo mkdir -p /opt/geoip_block/bin
-sudo mkdir -p /opt/geoip_block/data
+echo '[GeoIP block]: Сreating a directory structure...'
+sudo mkdir -p /opt/geoip_block/{etc,bin,data}
 
-echo '[GeoIP block]: Copy files'
+echo '[GeoIP block]: Сopying program files...'
 sudo cp ipset-apply.sh /opt/geoip_block/bin/ipset-apply.sh
 sudo cp geoip-block.sh /opt/geoip_block/bin/geoip-block.sh
 sudo cp url.list /opt/geoip_block/etc/url.list
@@ -26,7 +24,7 @@ sudo chmod +x /opt/geoip_block/bin/ipset-apply.sh
 sudo chmod +x /opt/geoip_block/bin/geoip-block.sh
 sudo ln -s /opt/geoip_block/bin/geoip-block.sh /usr/local/bin/geoip_block
 
-echo '[GeoIP block]: Start Update service'
+echo '[GeoIP block]: Setting up Update service'
 sudo systemctl link /opt/geoip_block/etc/geoip-update.service
 sudo systemctl link /opt/geoip_block/etc/geoip-update.timer
 sudo systemctl link /opt/geoip_block/etc/geoip-boot.service
