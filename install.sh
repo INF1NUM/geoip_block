@@ -11,7 +11,7 @@ rm main.tar.gz
 cd geoip_block-main/
 
 echo '[GeoIP block]: Сreating a directory structure...'
-sudo mkdir -p "${APPDIR}/{etc,bin,data}"
+sudo mkdir -p ${APPDIR}/{etc,bin,data}
 
 echo '[GeoIP block]: Сopying program files...'
 sudo cp ipset-apply.sh "${APPDIR}/bin/ipset-apply.sh"
